@@ -5,6 +5,7 @@ A small frontend-only dashboard to manage scholarships. No backend, no login.
 ## Run it
 Open `index.html` in any modern browser. No install or build step.
 (Optional: `python3 -m http.server` in this folder, then visit http://localhost:8000)
+Live Demo Link : https://drive.google.com/file/d/1vvH_tZ5gsN8uLlZtHGguVxKIZt3zEPP-/view?usp=sharing
 
 ## Features
 - Four summary cards: Total, Published, Draft, Expired (follow the selected state)
