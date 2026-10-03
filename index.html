@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Scholarship Dashboard · K12 Hunar CRM Demo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Scholarship Dashboard</h1>
+      
+    </div>
+    <button class="btn" id="addBtn">+ Add scholarship</button>
+  </header>
+
+  <section class="cards" aria-label="Summary" id="cards"></section>
+
+  <div class="bar">
+    <div class="tabs" id="tabs" role="group" aria-label="Filter by state"></div>
+    <label class="sub" for="statusFilter">Status</label>
+    <select id="statusFilter">
+      <option value="">All statuses</option><option>Published</option><option>Draft</option><option>Expired</option>
+    </select>
+  </div>
+
+  <div id="list"></div>
+  <p class="note">Counts reflect the selected state. Change a status from the dropdown in any row; it updates the cards instantly.</p>
+</div>
+
+<dialog id="formDlg" aria-labelledby="formTitle">
+  <div class="mh"><h2 id="formTitle">Add scholarship</h2><button class="x" data-close aria-label="Close">×</button></div>
+  <div class="mb">
+    <form id="form" novalidate>
+      <div class="field">
+        <label for="f_name">Scholarship name *</label>
+        <input id="f_name" type="text">
+        <div class="err" id="e_name"></div>
+      </div>
+      <div class="row2">
+      <div class="field">
+        <label for="f_state">State *</label>
+        <select id="f_state"><option>Bihar</option><option>Haryana</option><option>Jharkhand</option></select>
+        <div class="err" id="e_state"></div>
+      </div>
+      <div class="field">
+        <label for="f_status">Status *</label>
+        <select id="f_status"><option>Published</option><option>Draft</option><option>Expired</option></select>
+        <div class="err" id="e_status"></div>
+      </div>
+      </div>
+      <div class="field">
+        <label for="f_provider">Provider name *</label>
+        <input id="f_provider" type="text">
+        <div class="err" id="e_provider"></div>
+      </div>
+      <div class="row2">
+      <div class="field">
+        <label for="f_applicableClass">Applicable class *</label>
+        <input id="f_applicableClass" type="text">
+        <div class="err" id="e_applicableClass"></div>
+      </div>
+      <div class="field">
+        <label for="f_deadline">Application deadline</label>
+        <input id="f_deadline" type="date">
+        <div class="prov">Leave empty if not stated.</div>
+        <div class="err" id="e_deadline"></div>
+      </div>
+      </div>
+      <div class="field">
+        <label for="f_eligibility">Eligibility criteria *</label>
+        <textarea id="f_eligibility" rows="3"></textarea>
+        <div class="err" id="e_eligibility"></div>
+      </div>
+      <div class="field">
+        <label for="f_benefit">Scholarship amount or benefit *</label>
+        <input id="f_benefit" type="text">
+        <div class="err" id="e_benefit"></div>
+      </div>
+      <div class="field">
+        <label for="f_link">Official application link *</label>
+        <input id="f_link" type="url">
+        <div class="err" id="e_link"></div>
+      </div>
+    </form>
+  </div>
+  <div class="mf"><button class="btn ghost" data-close type="button">Cancel</button><button class="btn" id="saveBtn" type="button">Save changes</button></div>
+</dialog>
+
+<dialog id="pvDlg" aria-labelledby="pvTitle">
+  <div class="mh"><h2 id="pvTitle">Student preview</h2><button class="x" data-close aria-label="Close">×</button></div>
+  <div class="mb" id="pvBody"></div>
+  <div class="mf"><button class="btn ghost" data-close type="button">Close</button></div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
